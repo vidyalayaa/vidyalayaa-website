@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vidyalayaa — Unified School Management Portal</title>
+  <meta name="description" content="Vidyalayaa Unified Portal for Parents, Teachers, Principals, Admins, and Students." />
+  <link rel="icon" type="image/jpg" href="/images/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/portal.css" />
+</head>
+<body class="portal-body">
+
+  <!-- ================= TOP HEADER ================= -->
+  <header class="portal-header">
+    <div class="portal-header__left">
+      <a href="/index.html" class="portal-brand">
+        <img src="/images/logo.jpg" alt="Vidyalayaa Logo" class="portal-brand__logo" />
+        <span class="portal-brand__name">Vidyalayaa</span>
+        <span class="portal-brand__badge">Unified Portal</span>
+      </a>
+      <div class="portal-school-selector">
+        <span class="portal-school-icon">🏫</span>
+        <span class="portal-school-name">Delhi Public School • North Campus</span>
+        <span class="portal-school-session">AY 2026-27</span>
+      </div>
+    </div>
+
+    <!-- Role Switcher Tabs -->
+    <div class="portal-role-tabs" id="role-switcher">
+      <button class="role-tab active" data-role="parent" id="tab-parent">
+        <span class="role-tab__icon">👨‍👩‍👦</span>
+        <span class="role-tab__label">Parent</span>
+      </button>
+      <button class="role-tab" data-role="teacher" id="tab-teacher">
+        <span class="role-tab__icon">👩‍🏫</span>
+        <span class="role-tab__label">Teacher</span>
+      </button>
+      <button class="role-tab" data-role="principal" id="tab-principal">
+        <span class="role-tab__icon">🎓</span>
+        <span class="role-tab__label">Principal</span>
+      </button>
+      <button class="role-tab" data-role="admin" id="tab-admin">
+        <span class="role-tab__icon">⚙️</span>
+        <span class="role-tab__label">School Admin</span>
+      </button>
+      <button class="role-tab" data-role="student" id="tab-student">
+        <span class="role-tab__icon">🎒</span>
+        <span class="role-tab__label">Student</span>
+      </button>
+    </div>
+
+    <div class="portal-header__right">
+      <button class="portal-icon-btn" id="notif-btn" title="Notifications" aria-label="Notifications">
+        <span class="portal-icon-badge">3</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      </button>
+      <div class="portal-user-profile" id="current-user-card">
+        <div class="portal-avatar" id="current-avatar">PM</div>
+        <div class="portal-user-meta">
+          <div class="portal-user-name" id="current-user-name">Priya Sharma</div>
+          <div class="portal-user-role-label" id="current-user-role">Parent • 2 Children</div>
+        </div>
+      </div>
+      <a href="/index.html" class="portal-exit-btn" title="Return to website">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        <span>Exit Portal</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT PANELS ================= -->
+  <main class="portal-main">
+
+    <!-- ========================================================
+         1. PARENT PANEL
+         ======================================================== -->
+    <div class="panel-view active" id="panel-parent">
+      <!-- Child Switcher & Quick Stats -->
+      <div class="portal-subnav">
+        <div class="child-switcher">
+          <button class="child-btn active" data-child="aarav">
+            <span class="child-btn__avatar">👦</span>
+            <div class="child-btn__info">
+              <span class="child-btn__name">Aarav Sharma</span>
+              <span class="child-btn__class">Class 9-B • Roll 18</span>
+            </div>
+            <span class="status-indicator status-indicator--online">In School</span>
+          </button>
+          <button class="child-btn" data-child="ananya">
+            <span class="child-btn__avatar">👧</span>
+            <div class="child-btn__info">
+              <span class="child-btn__name">Ananya Sharma</span>
+              <span class="child-btn__class">Class 5-A • Roll 07</span>
+            </div>
+            <span class="status-indicator status-indicator--online">In School</span>
+          </button>
+        </div>
+        <div class="portal-badge-green">
+          <span>●</span> NFC Card Active: <strong>UID 04:A2:89:FE:19</strong>
+        </div>
+      </div>
+
+      <div class="panel-grid">
+        <!-- Live Attendance & Gate Status -->
+        <div class="card card--col-span-2">
+          <div class="card__header">
+            <div>
+              <h3 class="card__title">Today's NFC Gate Attendance</h3>
+              <p class="card__desc">Real-time arrival & departure tracking via turnstile NFC readers</p>
+            </div>
+            <span class="badge badge--green">Verified Present</span>
+          </div>
+
+          <div class="gate-timeline">
+            <div class="gate-event gate-event--success">
+              <div class="gate-event__icon">🟢</div>
+              <div class="gate-event__content">
+                <div class="gate-event__title">Morning Arrival • Main Entrance Gate</div>
+                <div class="gate-event__time">Today at 08:02 AM • Reader DEV-01</div>
+                <p class="gate-event__note">NFC Card tapped cleanly. Notification pushed to WhatsApp & App.</p>
+              </div>
+              <span class="gate-event__status">On Time</span>
+            </div>
+
+            <div class="gate-event gate-event--upcoming">
+              <div class="gate-event__icon">⏳</div>
+              <div class="gate-event__content">
+                <div class="gate-event__title">Afternoon Departure • Bus Bay Gate</div>
+                <div class="gate-event__time">Scheduled 03:15 PM • Reader DEV-02</div>
+                <p class="gate-event__note">Awaiting student exit tap at dispersal time.</p>
+              </div>
+              <span class="gate-event__status">Pending</span>
+            </div>
+          </div>
+
+          <!-- Attendance Overview Stats -->
+          <div class="mini-stats-grid">
+            <div class="mini-stat">
+              <span class="mini-stat__val">95.6%</span>
+              <span class="mini-stat__lbl">Monthly Attendance</span>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-stat__val">22</span>
+              <span class="mini-stat__lbl">Days Present</span>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-stat__val">1</span>
+              <span class="mini-stat__lbl">Sick Leave</span>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-stat__val">0</span>
+              <span class="mini-stat__lbl">Unexcused</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fee Due & Quick Pay -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Fee Status & Dues</h3>
+            <span class="badge badge--dark">Term 3</span>
+          </div>
+          <div class="fee-card-body">
+            <div class="fee-amount-box">
+              <span class="fee-amount-label">Upcoming Installment</span>
+              <span class="fee-amount">₹ 14,500</span>
+              <span class="fee-due-date">Due: 25th November 2026</span>
+            </div>
+            <ul class="fee-breakdown">
+              <li><span>Tuition & Lab Fee:</span> <strong>₹ 11,000</strong></li>
+              <li><span>Transport (Route 14):</span> <strong>₹ 2,500</strong></li>
+              <li><span>Smart Card & RFID Fee:</span> <strong>₹ 1,000</strong></li>
+            </ul>
+            <button class="btn btn--primary btn--full" id="btn-pay-fee">
+              Pay Online (UPI / Card)
+            </button>
+            <div class="fee-receipt-link">
+              <a href="#">📄 Download Q2 Payment Receipt (₹14,500 Paid)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Performance & Exam Marks -->
+        <div class="card card--col-span-2">
+          <div class="card__header">
+            <div>
+              <h3 class="card__title">Academic Performance • Mid-Term 2</h3>
+              <p class="card__desc">Latest evaluated examination results for Class 9-B</p>
+            </div>
+            <span class="badge badge--green">Rank: 4th in Class</span>
+          </div>
+
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Max Marks</th>
+                  <th>Marks Scored</th>
+                  <th>Grade</th>
+                  <th>Teacher Remark</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Mathematics</strong></td>
+                  <td>100</td>
+                  <td><span class="score-pill score-pill--high">92</span></td>
+                  <td>A1</td>
+                  <td>Strong algebraic problem solving</td>
+                </tr>
+                <tr>
+                  <td><strong>Science (Physics/Chem/Bio)</strong></td>
+                  <td>100</td>
+                  <td><span class="score-pill score-pill--high">88</span></td>
+                  <td>A2</td>
+                  <td>Excellent in practical lab exam</td>
+                </tr>
+                <tr>
+                  <td><strong>English Literature</strong></td>
+                  <td>100</td>
+                  <td><span class="score-pill score-pill--high">95</span></td>
+                  <td>A1</td>
+                  <td>Outstanding creative writing</td>
+                </tr>
+                <tr>
+                  <td><strong>Social Science</strong></td>
+                  <td>100</td>
+                  <td><span class="score-pill score-pill--mid">84</span></td>
+                  <td>B1</td>
+                  <td>Needs slight focus in Map work</td>
+                </tr>
+                <tr>
+                  <td><strong>Computer Applications</strong></td>
+                  <td>100</td>
+                  <td><span class="score-pill score-pill--high">98</span></td>
+                  <td>A1</td>
+                  <td>Top scorer in Python fundamentals</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Homework & Daily Diary -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Homework & Diary</h3>
+            <span class="badge badge--gray">Today</span>
+          </div>
+          <div class="homework-list">
+            <div class="homework-item">
+              <div class="homework-item__badge homework-item__badge--math">Math</div>
+              <div class="homework-item__content">
+                <div class="homework-item__title">Solve Exercise 7.2 (Q1 to Q8)</div>
+                <div class="homework-item__due">Due Tomorrow • Mr. Mehta</div>
+              </div>
+            </div>
+            <div class="homework-item">
+              <div class="homework-item__badge homework-item__badge--science">Science</div>
+              <div class="homework-item__content">
+                <div class="homework-item__title">Write Ohm's Law Experiment Report</div>
+                <div class="homework-item__due">Due Friday • Mrs. Anita</div>
+              </div>
+            </div>
+            <div class="homework-item">
+              <div class="homework-item__badge homework-item__badge--eng">English</div>
+              <div class="homework-item__content">
+                <div class="homework-item__title">Read Chapter 5: The Merchant of Venice</div>
+                <div class="homework-item__due">Due Monday • Ms. Roy</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         2. TEACHER PANEL
+         ======================================================== -->
+    <div class="panel-view" id="panel-teacher">
+      <div class="portal-subnav">
+        <div class="class-picker">
+          <label>Selected Class:</label>
+          <select class="portal-select" id="teacher-class-select">
+            <option value="9b" selected>Class 9-B (Mathematics) — Class Teacher</option>
+            <option value="8a">Class 8-A (Science)</option>
+            <option value="10c">Class 10-C (Mathematics)</option>
+          </select>
+        </div>
+        <div class="portal-actions-group">
+          <button class="btn btn--outline btn--sm" id="btn-export-attendance">📊 Export Attendance (CSV)</button>
+          <button class="btn btn--primary btn--sm" id="btn-add-hw-modal">+ Add Homework</button>
+        </div>
+      </div>
+
+      <!-- Quick Class Stats -->
+      <div class="teacher-kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-card__label">Total Enrolled</div>
+          <div class="kpi-card__val">45</div>
+          <div class="kpi-card__sub">Class 9-B Section</div>
+        </div>
+        <div class="kpi-card kpi-card--green">
+          <div class="kpi-card__label">NFC Tapped (Present)</div>
+          <div class="kpi-card__val">42</div>
+          <div class="kpi-card__sub">93.3% Attendance Today</div>
+        </div>
+        <div class="kpi-card kpi-card--red">
+          <div class="kpi-card__label">Absent Today</div>
+          <div class="kpi-card__val">3</div>
+          <div class="kpi-card__sub">SMS alerts dispatched to parents</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-card__label">Pending Grading</div>
+          <div class="kpi-card__val">12</div>
+          <div class="kpi-card__sub">Math Unit Test Submissions</div>
+        </div>
+      </div>
+
+      <div class="panel-grid">
+        <!-- Live Class Roster & Gate NFC Roll Verification -->
+        <div class="card card--col-span-2">
+          <div class="card__header">
+            <div>
+              <h3 class="card__title">Live Attendance Roster & NFC Tap Verification</h3>
+              <p class="card__desc">Review gate taps. Tap on any student to override manual attendance status.</p>
+            </div>
+            <div class="roster-search">
+              <input type="text" placeholder="Search student name or roll..." class="roster-search-input" id="student-search" />
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table class="data-table" id="teacher-roster-table">
+              <thead>
+                <tr>
+                  <th>Roll #</th>
+                  <th>Student Name</th>
+                  <th>RFID Card UID</th>
+                  <th>Gate Tap Time</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>18</td>
+                  <td><strong>Aarav Sharma</strong></td>
+                  <td><code class="tag-code">04:A2:89:FE:19</code></td>
+                  <td>08:02 AM (Gate 01)</td>
+                  <td><span class="badge badge--green">🟢 Present</span></td>
+                  <td><button class="btn-toggle-att">Toggle</button></td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td><strong>Aditya Verma</strong></td>
+                  <td><code class="tag-code">04:B1:77:AC:22</code></td>
+                  <td>08:06 AM (Gate 01)</td>
+                  <td><span class="badge badge--green">🟢 Present</span></td>
+                  <td><button class="btn-toggle-att">Toggle</button></td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td><strong>Ananya Sen</strong></td>
+                  <td><code class="tag-code">04:C4:12:D8:33</code></td>
+                  <td>08:14 AM (Gate 02)</td>
+                  <td><span class="badge badge--yellow">🟡 Late (08:14)</span></td>
+                  <td><button class="btn-toggle-att">Toggle</button></td>
+                </tr>
+                <tr>
+                  <td>21</td>
+                  <td><strong>Deepak Joshi</strong></td>
+                  <td><code class="tag-code">04:D8:99:FA:44</code></td>
+                  <td>— No Gate Tap —</td>
+                  <td><span class="badge badge--red">🔴 Absent</span></td>
+                  <td><button class="btn-toggle-att">Toggle</button></td>
+                </tr>
+                <tr>
+                  <td>22</td>
+                  <td><strong>Ishaan Kapoor</strong></td>
+                  <td><code class="tag-code">04:E2:45:11:55</code></td>
+                  <td>07:55 AM (Gate 01)</td>
+                  <td><span class="badge badge--green">🟢 Present</span></td>
+                  <td><button class="btn-toggle-att">Toggle</button></td>
+                </tr>
+                <tr>
+                  <td>23</td>
+                  <td><strong>Kavya Nair</strong></td>
+                  <td><code class="tag-code">04:F7:88:90:66</code></td>
+                  <td>08:01 AM (Gate 01)</td>
+                  <td><span class="badge badge--green">🟢 Present</span></td>
+                  <td><button class="btn-toggle-att">Toggle</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Grade Entry Widget -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Fast Marks Entry</h3>
+            <span class="badge badge--green">Unit Test 2</span>
+          </div>
+          <form class="grade-form" id="teacher-grade-form">
+            <div class="form-group">
+              <label class="form-label">Subject:</label>
+              <input type="text" class="cta__input modal-input" value="Mathematics (Class 9-B)" disabled />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Select Student:</label>
+              <select class="portal-select w-full" id="grade-student-select">
+                <option>Roll 18 — Aarav Sharma</option>
+                <option>Roll 19 — Aditya Verma</option>
+                <option>Roll 20 — Ananya Sen</option>
+                <option>Roll 21 — Deepak Joshi</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Marks Scored (out of 50):</label>
+              <input type="number" max="50" min="0" value="46" class="cta__input modal-input" id="input-marks" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Teacher Remark:</label>
+              <input type="text" value="Good problem conceptual clarity" class="cta__input modal-input" id="input-remark" />
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Save & Publish to Parent App</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         3. PRINCIPAL PANEL
+         ======================================================== -->
+    <div class="panel-view" id="panel-principal">
+      <div class="portal-subnav">
+        <div class="portal-subnav__title">
+          <h2>School-Wide Executive Dashboard</h2>
+          <p>Real-time institutional oversight, gate safety, and performance metrics</p>
+        </div>
+        <div class="portal-actions-group">
+          <button class="btn btn--primary btn--sm" id="btn-principal-broadcast">📢 School Broadcast Alert</button>
+        </div>
+      </div>
+
+      <!-- High Level KPIs -->
+      <div class="teacher-kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-card__label">Total Enrollment</div>
+          <div class="kpi-card__val">1,450</div>
+          <div class="kpi-card__sub">Across Grades 1 to 12</div>
+        </div>
+        <div class="kpi-card kpi-card--green">
+          <div class="kpi-card__label">Overall Attendance</div>
+          <div class="kpi-card__val">94.8%</div>
+          <div class="kpi-card__sub">1,375 Present • 75 Absent Today</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-card__label">Staff & Teachers</div>
+          <div class="kpi-card__val">68 / 70</div>
+          <div class="kpi-card__sub">97.1% Faculty Presence</div>
+        </div>
+        <div class="kpi-card kpi-card--green">
+          <div class="kpi-card__label">Hardware Health</div>
+          <div class="kpi-card__val">4 / 4 Online</div>
+          <div class="kpi-card__sub">All NFC Readers Syncing (0ms lag)</div>
+        </div>
+      </div>
+
+      <div class="panel-grid">
+        <!-- Grade-wise Attendance Comparison -->
+        <div class="card card--col-span-2">
+          <div class="card__header">
+            <div>
+              <h3 class="card__title">Attendance Trends by Grade (Today)</h3>
+              <p class="card__desc">Live breakdown across primary, middle, and senior wings</p>
+            </div>
+            <span class="badge badge--dark">Live NFC Feed</span>
+          </div>
+
+          <div class="bar-chart-list">
+            <div class="bar-item">
+              <div class="bar-item__label">Class 12 (Senior Wing)</div>
+              <div class="bar-item__bar-wrap">
+                <div class="bar-item__bar" style="width: 98%;"></div>
+              </div>
+              <div class="bar-item__val">98.0% (118/120)</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-item__label">Class 11 (Senior Wing)</div>
+              <div class="bar-item__bar-wrap">
+                <div class="bar-item__bar" style="width: 95%;"></div>
+              </div>
+              <div class="bar-item__val">95.0% (114/120)</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-item__label">Class 10 (Secondary)</div>
+              <div class="bar-item__bar-wrap">
+                <div class="bar-item__bar" style="width: 96.5%;"></div>
+              </div>
+              <div class="bar-item__val">96.5% (135/140)</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-item__label">Class 9 (Secondary)</div>
+              <div class="bar-item__bar-wrap">
+                <div class="bar-item__bar" style="width: 93.3%;"></div>
+              </div>
+              <div class="bar-item__val">93.3% (131/140)</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-item__label">Class 8 (Middle Wing)</div>
+              <div class="bar-item__bar-wrap">
+                <div class="bar-item__bar" style="width: 94.2%;"></div>
+              </div>
+              <div class="bar-item__val">94.2% (132/140)</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-item__label">Primary Grades (1 to 5)</div>
+              <div class="bar-item__bar-wrap">
+                <div class="bar-item__bar" style="width: 94.0%;"></div>
+              </div>
+              <div class="bar-item__val">94.0% (742/790)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real-Time Gate Security Log -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Security & Gate Logs</h3>
+            <span class="badge badge--green">Live Queue</span>
+          </div>
+
+          <div class="audit-log-list">
+            <div class="audit-log-item">
+              <span class="audit-log-time">08:18 AM</span>
+              <div class="audit-log-msg">
+                <strong>Gate 02 Bus Bay:</strong> Bus #14 and #09 arrival verified. 74 cards scanned in 3 minutes.
+              </div>
+            </div>
+            <div class="audit-log-item">
+              <span class="audit-log-time">08:15 AM</span>
+              <div class="audit-log-msg">
+                <strong>Late Window Active:</strong> Gate 01 auto-tagged 12 students arriving post 08:15 bell.
+              </div>
+            </div>
+            <div class="audit-log-item">
+              <span class="audit-log-time">08:05 AM</span>
+              <div class="audit-log-msg">
+                <strong>SMS Dispatch:</strong> 1,300+ parent arrival confirmation SMS completed (99.8% SLA).
+              </div>
+            </div>
+            <div class="audit-log-item">
+              <span class="audit-log-time">07:45 AM</span>
+              <div class="audit-log-msg">
+                <strong>Devices Heartbeat:</strong> All 4 ESP32 NFC gate terminals healthy with 98% battery/mains.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         4. SCHOOL ADMIN PANEL
+         ======================================================== -->
+    <div class="panel-view" id="panel-admin">
+      <div class="portal-subnav">
+        <div class="portal-subnav__title">
+          <h2>School System Administration</h2>
+          <p>Hardware provisioning, NFC cards registry, user permissions, and billing</p>
+        </div>
+        <div class="portal-actions-group">
+          <button class="btn btn--outline btn--sm" id="btn-register-device">+ Claim NFC Device</button>
+          <button class="btn btn--primary btn--sm" id="btn-pair-card">+ Issue NFC Card</button>
+        </div>
+      </div>
+
+      <!-- Hardware & Infrastructure Status Grid -->
+      <div class="teacher-kpi-row">
+        <div class="kpi-card kpi-card--green">
+          <div class="kpi-card__label">DEV-01 (Main Turnstile Gate)</div>
+          <div class="kpi-card__val">Online 🟢</div>
+          <div class="kpi-card__sub">Signal: -58dBm • Battery: 98% • Sync: 0s</div>
+        </div>
+        <div class="kpi-card kpi-card--green">
+          <div class="kpi-card__label">DEV-02 (Bus Bay Turnstile)</div>
+          <div class="kpi-card__val">Online 🟢</div>
+          <div class="kpi-card__sub">Signal: -64dBm • Battery: 92% • Sync: 0s</div>
+        </div>
+        <div class="kpi-card kpi-card--green">
+          <div class="kpi-card__label">DEV-03 (Senior Block Entrance)</div>
+          <div class="kpi-card__val">Online 🟢</div>
+          <div class="kpi-card__sub">Mains Powered • Sync: 0s • Firmware v2.4</div>
+        </div>
+        <div class="kpi-card kpi-card--green">
+          <div class="kpi-card__label">DEV-04 (Library & Lab Reader)</div>
+          <div class="kpi-card__val">Online 🟢</div>
+          <div class="kpi-card__sub">Mains Powered • Sync: 0s • Firmware v2.4</div>
+        </div>
+      </div>
+
+      <div class="panel-grid">
+        <!-- NFC Card Inventory Management -->
+        <div class="card card--col-span-2">
+          <div class="card__header">
+            <div>
+              <h3 class="card__title">NFC Smart Card Registry & Allocation</h3>
+              <p class="card__desc">Total 1,500 Cards Purchased • 1,450 Issued • 50 In Reserve</p>
+            </div>
+            <button class="btn btn--sm btn--outline" id="btn-bulk-import">Bulk CSV Assign</button>
+          </div>
+
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>RFID UID</th>
+                  <th>Assigned To</th>
+                  <th>Role / Grade</th>
+                  <th>Issued Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code class="tag-code">04:A2:89:FE:19</code></td>
+                  <td><strong>Aarav Sharma</strong></td>
+                  <td>Student (Class 9-B)</td>
+                  <td>15 May 2026</td>
+                  <td><span class="badge badge--green">Active</span></td>
+                  <td><a href="#" class="action-link">Re-link / Block</a></td>
+                </tr>
+                <tr>
+                  <td><code class="tag-code">04:B1:77:AC:22</code></td>
+                  <td><strong>Aditya Verma</strong></td>
+                  <td>Student (Class 9-B)</td>
+                  <td>15 May 2026</td>
+                  <td><span class="badge badge--green">Active</span></td>
+                  <td><a href="#" class="action-link">Re-link / Block</a></td>
+                </tr>
+                <tr>
+                  <td><code class="tag-code">04:C4:12:D8:33</code></td>
+                  <td><strong>Mrs. Anita Kumar</strong></td>
+                  <td>Faculty (Sr. Teacher)</td>
+                  <td>10 May 2026</td>
+                  <td><span class="badge badge--green">Active</span></td>
+                  <td><a href="#" class="action-link">Re-link / Block</a></td>
+                </tr>
+                <tr>
+                  <td><code class="tag-code">04:D8:99:FA:44</code></td>
+                  <td><strong>Unassigned Card #44</strong></td>
+                  <td>Spare Inventory</td>
+                  <td>—</td>
+                  <td><span class="badge badge--gray">In Stock</span></td>
+                  <td><a href="#" class="action-link">Assign Student</a></td>
+                </tr>
+                <tr>
+                  <td><code class="tag-code">04:E2:45:11:55</code></td>
+                  <td><strong>Lost Card #102</strong></td>
+                  <td>Deactivated</td>
+                  <td>02 Jun 2026</td>
+                  <td><span class="badge badge--red">Revoked</span></td>
+                  <td><a href="#" class="action-link">Re-issue</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- School Platform Settings -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Security & Policies</h3>
+            <span class="badge badge--dark">Enterprise</span>
+          </div>
+
+          <div class="settings-list">
+            <div class="setting-row">
+              <div>
+                <strong>Two-Factor Auth (2FA)</strong>
+                <p>Enforce OTP for all teacher & admin logins</p>
+              </div>
+              <input type="checkbox" checked class="portal-toggle" />
+            </div>
+            <div class="setting-row">
+              <div>
+                <strong>WhatsApp Gate Notifications</strong>
+                <p>Send instant gate arrival alert to parents</p>
+              </div>
+              <input type="checkbox" checked class="portal-toggle" />
+            </div>
+            <div class="setting-row">
+              <div>
+                <strong>Grace Period Window</strong>
+                <p>Allow entry until 08:15 AM before marking Late</p>
+              </div>
+              <span class="badge badge--green">15 Mins</span>
+            </div>
+            <div class="setting-row">
+              <div>
+                <strong>Offline Sync Queue</strong>
+                <p>Max stored taps when wifi/LTE drops</p>
+              </div>
+              <span class="badge badge--dark">10,000 Taps</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         5. STUDENT PANEL
+         ======================================================== -->
+    <div class="panel-view" id="panel-student">
+      <div class="portal-subnav">
+        <div class="portal-subnav__title">
+          <h2>Student Digital Profile & Schedule</h2>
+          <p>Welcome back, Aarav! Here is your school day at a glance.</p>
+        </div>
+        <div class="portal-badge-green">
+          <span>●</span> Gate Tap Verified: <strong>08:02 AM Today</strong>
+        </div>
+      </div>
+
+      <div class="panel-grid">
+        <!-- Digital Student ID Card -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Smart Digital Student ID</h3>
+            <span class="badge badge--green">Active</span>
+          </div>
+
+          <div class="student-id-badge">
+            <div class="student-id-badge__header">
+              <span class="student-id-badge__school">DELHI PUBLIC SCHOOL</span>
+              <span class="student-id-badge__type">STUDENT PASS</span>
+            </div>
+            <div class="student-id-badge__body">
+              <div class="student-id-badge__photo">👦</div>
+              <div class="student-id-badge__details">
+                <div class="student-id-badge__name">Aarav Sharma</div>
+                <div class="student-id-badge__meta">Grade: 9th Section B</div>
+                <div class="student-id-badge__meta">Roll Number: 18</div>
+                <div class="student-id-badge__meta">Blood Group: O+</div>
+                <div class="student-id-badge__meta">Bus Route: #14 (North)</div>
+              </div>
+            </div>
+            <div class="student-id-badge__footer">
+              <div class="rfid-chip-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12C2 6.5 6.5 2 12 2a10 10 0 0 1 10 10c0 5.5-4.5 10-10 10a10 10 0 0 1-10-10z"/><path d="M8 12a4 4 0 0 1 4-4"/><path d="M12 8a4 4 0 0 1 4 4"/></svg>
+                <span>NFC NFC-ID: 04:A2:89:FE:19</span>
+              </div>
+              <span class="student-id-badge__validity">Valid: 2026-27</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Today's Timetable -->
+        <div class="card card--col-span-2">
+          <div class="card__header">
+            <div>
+              <h3 class="card__title">Today's Class Schedule (Tuesday)</h3>
+              <p class="card__desc">Period-wise timetable with classroom & faculty details</p>
+            </div>
+            <span class="badge badge--green">Period 3 Current</span>
+          </div>
+
+          <div class="timetable-grid">
+            <div class="period-card period-card--past">
+              <div class="period-card__time">08:15 - 09:00 AM</div>
+              <div class="period-card__subject">English Lit</div>
+              <div class="period-card__teacher">Ms. Roy • Room 204</div>
+              <span class="period-card__status">Completed</span>
+            </div>
+            <div class="period-card period-card--past">
+              <div class="period-card__time">09:00 - 09:45 AM</div>
+              <div class="period-card__subject">Physics</div>
+              <div class="period-card__teacher">Dr. Raman • Science Lab 2</div>
+              <span class="period-card__status">Completed</span>
+            </div>
+            <div class="period-card period-card--active">
+              <div class="period-card__time">10:00 - 10:45 AM</div>
+              <div class="period-card__subject">Mathematics</div>
+              <div class="period-card__teacher">Mr. Mehta • Room 204</div>
+              <span class="period-card__status">● In Progress</span>
+            </div>
+            <div class="period-card">
+              <div class="period-card__time">10:45 - 11:30 AM</div>
+              <div class="period-card__subject">Chemistry</div>
+              <div class="period-card__teacher">Mrs. Anita • Chem Lab 1</div>
+              <span class="period-card__status">Upcoming</span>
+            </div>
+            <div class="period-card">
+              <div class="period-card__time">12:00 - 12:45 PM</div>
+              <div class="period-card__subject">Computer Science</div>
+              <div class="period-card__teacher">Mr. Verma • IT Lab</div>
+              <span class="period-card__status">Upcoming</span>
+            </div>
+            <div class="period-card">
+              <div class="period-card__time">01:30 - 02:15 PM</div>
+              <div class="period-card__subject">Physical Education</div>
+              <div class="period-card__teacher">Coach Singh • Main Ground</div>
+              <span class="period-card__status">Upcoming</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Attendance Summary -->
+        <div class="card card--col-span-3">
+          <div class="card__header">
+            <div>
+              <h3 class="card__title">Attendance Record (Year to Date)</h3>
+              <p class="card__desc">Verified NFC tap presence across all school days</p>
+            </div>
+            <span class="badge badge--green">96.5% Overall Attendance</span>
+          </div>
+
+          <div class="mini-stats-grid">
+            <div class="mini-stat">
+              <span class="mini-stat__val">112</span>
+              <span class="mini-stat__lbl">Days Attended</span>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-stat__val">4</span>
+              <span class="mini-stat__lbl">Leaves Taken</span>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-stat__val">2</span>
+              <span class="mini-stat__lbl">Late Taps</span>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-stat__val">100%</span>
+              <span class="mini-stat__lbl">Exam Attendance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script type="module" src="/portal.js"></script>
+</body>
+</html>

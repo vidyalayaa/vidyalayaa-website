@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vidyalayaa — Smart School Management with NFC Attendance</title>
+  <meta name="description"
+    content="Vidyalayaa is an all-in-one school management platform with NFC-powered attendance, real-time parent notifications, academic tracking, and more. Built for Indian schools." />
+  <link rel="icon" type="image/jpg" href="/images/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body> <!-- ============ FRONT PAGE NAVBAR ============ -->
+  <nav class="canvas-nav" id="navbar">
+    <div class="canvas-nav__inner">
+      <a href="#" class="canvas-nav__brand">
+        <div class="brand-dots">
+          <span class="b-dot b-dot--cyan"></span>
+          <span class="b-dot b-dot--dark"></span>
+          <span class="b-dot b-dot--dark"></span>
+          <span class="b-dot b-dot--dark"></span>
+        </div>
+        <span class="brand-text">Vidyalayaa</span>
+      </a>
+
+      <ul class="canvas-nav__links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">NFC Attendance</a></li>
+        <li><a href="/portal.html">Portals</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+
+      <div class="canvas-nav__actions">
+        <a href="#cta" class="canvas-nav__getdemo">Get demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ FRONT PAGE HERO ============ -->
+  <section class="canvas-hero" id="hero">
+    <!-- Dot Pattern Background -->
+    <div class="canvas-hero__dots-bg"></div>
+
+    <div class="canvas-hero__container">
+
+      <!-- ================= TOP LEFT SURROUNDING ================= -->
+      <div class="hero-surround hero-surround--top-left">
+        <!-- Backing paper sheets -->
+        <div class="paper-sheet paper-sheet--1"></div>
+        <div class="paper-sheet paper-sheet--2"></div>
+
+        <!-- Yellow Sticky Note -->
+        <div class="sticky-note">
+          <div class="sticky-pushpin">
+            <span class="pin-head"></span>
+            <span class="pin-shadow"></span>
+          </div>
+          <p class="sticky-note__text">
+            Student taps card at gate. Arrival is recorded and parents are notified instantly.
+          </p>
+        </div>
+
+        <!-- Overlapping Checkmark Tile -->
+        <div class="tile-check">
+          <div class="tile-check__inner">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= TOP RIGHT SURROUNDING ================= -->
+      <div class="hero-surround hero-surround--top-right">
+        <!-- Stopwatch Overlapping Left of Folder -->
+        <div class="tile-stopwatch">
+          <svg class="stopwatch-svg" width="46" height="46" viewBox="0 0 48 48" fill="none">
+            <!-- Top crown & button -->
+            <rect x="21" y="2" width="6" height="4" rx="1.5" fill="#94a3b8" />
+            <rect x="20" y="5" width="8" height="2" rx="1" fill="#cbd5e1" />
+            <!-- Stopwatch Body -->
+            <circle cx="24" cy="26" r="18" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" />
+            <circle cx="24" cy="26" r="15" fill="#f8fafc" stroke="#f1f5f9" stroke-width="1" />
+            <!-- Tick Marks -->
+            <line x1="24" y1="13" x2="24" y2="16" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="24" y1="36" x2="24" y2="39" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="11" y1="26" x2="14" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="34" y1="26" x2="37" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" />
+            <!-- Hands -->
+            <line x1="24" y1="26" x2="31" y2="26" stroke="#1e293b" stroke-width="2.2" stroke-linecap="round" />
+            <line x1="24" y1="26" x2="24" y2="15" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round" />
+            <!-- Center Pivot -->
+            <circle cx="24" cy="26" r="2.5" fill="#1e293b" />
+            <circle cx="24" cy="26" r="1" fill="#ef4444" />
+          </svg>
+        </div>
+
+        <!-- Reminders Folder Card -->
+        <div class="folder-card folder-card--reminders">
+          <div class="folder-card__tab">Main Gate</div>
+          <div class="folder-card__header">
+            <span class="folder-card__title">Gate Alert</span>
+          </div>
+          <div class="reminder-body">
+            <div class="reminder-body__title">Student Arrived</div>
+            <div class="reminder-body__sub">Aarav Sharma · Class 8-A</div>
+            <div class="reminder-body__label">Time</div>
+            <div class="reminder-body__pill">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>08:12 AM · On Time</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= CENTER HEADLINE & CTA ================= -->
+      <div class="hero-center">
+        <!-- 3D Squircle Icon with 4 Dots -->
+        <div class="hero-center__icon">
+          <div class="hero-center__icon-dots">
+            <span class="c-dot c-dot--cyan"></span>
+            <span class="c-dot c-dot--dark"></span>
+            <span class="c-dot c-dot--dark"></span>
+            <span class="c-dot c-dot--dark"></span>
+          </div>
+        </div>
+
+        <!-- Center Title -->
+        <h1 class="hero-center__title">
+          Smart School Management,<br />
+          <span class="hero-center__title-gray">Powered by Vidyalayaa</span>
+        </h1>
+
+        <!-- Center Subtitle -->
+        <p class="hero-center__subtitle">
+          Automated gate attendance, instant parent alerts, and academic tracking.
+        </p>
+
+        <!-- Blue CTA Button: Login -->
+        <a href="/portal.html" class="hero-center__btn" id="nav-login">
+          Login
+        </a>
+      </div>
+
+      <!-- ================= BOTTOM LEFT SURROUNDING ================= -->
+      <div class="hero-surround hero-surround--bottom-left">
+        <div class="folder-card folder-card--tasks">
+          <div class="folder-card__header">
+            <span class="folder-card__title">Today's Attendance</span>
+          </div>
+          <div class="tasks-group">
+            <!-- Task Item 1 -->
+            <div class="task-row">
+              <div class="task-row__icon task-row__icon--green">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 11 12 14 22 4"></polyline>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+              </div>
+              <div class="task-row__info">
+                <span class="task-row__name">Class 8-A — Gate Entry</span>
+                <span class="task-row__date">42/45 Present (93%)</span>
+              </div>
+              <div class="task-row__meta">
+                <div class="avatar-pair">
+                  <span class="avatar-circle avatar-circle--1"></span>
+                  <span class="avatar-circle avatar-circle--2"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Task Item 2 -->
+            <div class="task-row">
+              <div class="task-row__icon task-row__icon--orange">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="task-row__info">
+                <span class="task-row__name">Class 9-B — In Progress</span>
+                <span class="task-row__date">38/44 Present (86%)</span>
+              </div>
+              <div class="task-row__meta">
+                <div class="task-progress-bar">
+                  <span class="progress-segment progress-segment--cyan"></span>
+                  <span class="progress-segment progress-segment--orange"></span>
+                </div>
+                <span class="avatar-circle avatar-circle--3"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= BOTTOM RIGHT SURROUNDING ================= -->
+      <div class="hero-surround hero-surround--bottom-right">
+        <div class="folder-card folder-card--integrations">
+          <div class="folder-card__header">
+            <span class="folder-card__title">Parent Alerts</span>
+          </div>
+          <div class="integrations-deck">
+            <!-- Push Notification -->
+            <div class="app-icon" title="Mobile Push (FCM)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+            </div>
+
+            <!-- SMS Alert -->
+            <div class="app-icon" title="Instant SMS">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                <line x1="9" y1="10" x2="15" y2="10"></line>
+              </svg>
+            </div>
+
+            <!-- NFC Smart Card -->
+            <div class="app-icon" title="NFC Card Readers">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                <line x1="2" y1="10" x2="22" y2="10"></line>
+                <circle cx="7" cy="15" r="1" fill="#0284c7"></circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOGOS / TRUSTED BY ============ -->
+  <section class="logos" id="logos">
+    <div class="container">
+      <p class="logos__label">Trusted by leading educational institutions across India</p>
+      <div class="logos__grid">
+        <div class="logos__item">Delhi Public School</div>
+        <div class="logos__item">Ryan International</div>
+        <div class="logos__item">DAV Public School</div>
+        <div class="logos__item">Kendriya Vidyalaya</div>
+        <div class="logos__item">St. Xavier's School</div>
+        <div class="logos__item">Amity International</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES SECTION ============ -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Features</span>
+        <h2 class="section-title">Everything your school needs,<br /><span class="text-accent">in one platform</span>
+        </h2>
+        <p class="section-subtitle">From NFC attendance to parent notifications, academic management to fee tracking —
+          Vidyalayaa brings it all together.</p>
+      </div>
+
+      <div class="features__grid">
+        <!-- Feature 1: NFC Attendance -->
+        <div class="feature-card feature-card--large" id="feature-nfc">
+          <div class="feature-card__icon-wrap feature-card__icon-wrap--green">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 12C2 6.5 6.5 2 12 2a10 10 0 0 1 10 10c0 5.5-4.5 10-10 10a10 10 0 0 1-10-10z" />
+              <path d="M8 12a4 4 0 0 1 4-4" />
+              <path d="M12 8a4 4 0 0 1 4 4" />
+              <circle cx="12" cy="12" r="1" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">NFC Smart Attendance</h3>
+          <p class="feature-card__desc">Students tap their NFC cards at school gates. Arrival and departure are recorded
+            instantly, with parents notified in real-time. No manual roll calls needed.</p>
+          <div class="feature-card__visual">
+            <img src="/images/nfc-device.jpg" alt="NFC Attendance Device" class="feature-card__img" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Feature 2: Parent Notifications -->
+        <div class="feature-card" id="feature-notifications">
+          <div class="feature-card__icon-wrap feature-card__icon-wrap--blue">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Real-Time Parent Alerts</h3>
+          <p class="feature-card__desc">Push notifications, SMS, and email alert parents the moment their child arrives
+            or departs. Full attendance history available on mobile.</p>
+        </div>
+
+        <!-- Feature 3: Academic Management -->
+        <div class="feature-card" id="feature-academics">
+          <div class="feature-card__icon-wrap feature-card__icon-wrap--purple">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Academic Tracking</h3>
+          <p class="feature-card__desc">Manage classes, exams, marks, homework, and timetables. Teachers enter results
+            that parents can view instantly by subject and exam.</p>
+        </div>
+
+        <!-- Feature 4: Multi-Role Dashboards -->
+        <div class="feature-card" id="feature-dashboards">
+          <div class="feature-card__icon-wrap feature-card__icon-wrap--orange">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="9" rx="1" />
+              <rect x="14" y="3" width="7" height="5" rx="1" />
+              <rect x="14" y="12" width="7" height="9" rx="1" />
+              <rect x="3" y="16" width="7" height="5" rx="1" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Role-Based Dashboards</h3>
+          <p class="feature-card__desc">Tailored views for Admins, Principals, Teachers, Parents, and Students — each
+            seeing exactly what they need, nothing more.</p>
+        </div>
+
+        <!-- Feature 5: Fee Management -->
+        <div class="feature-card" id="feature-fees">
+          <div class="feature-card__icon-wrap feature-card__icon-wrap--teal">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Fee Management</h3>
+          <p class="feature-card__desc">Track fee records, generate receipts, and give parents clear visibility into
+            pending and paid fees — all from a single dashboard.</p>
+        </div>
+
+        <!-- Feature 6: Reports & Analytics -->
+        <div class="feature-card feature-card--large" id="feature-reports">
+          <div class="feature-card__icon-wrap feature-card__icon-wrap--pink">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 20V10" />
+              <path d="M12 20V4" />
+              <path d="M6 20v-6" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Reports & Analytics</h3>
+          <p class="feature-card__desc">School-wide analytics on attendance patterns, academic performance, and
+            operational metrics. Export reports in CSV or PDF with one click.</p>
+          <div class="feature-card__visual">
+            <img src="/images/dashboard.jpg" alt="Analytics Dashboard" class="feature-card__img" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">How It Works</span>
+        <h2 class="section-title">Simple setup,<br /><span class="text-accent">powerful results</span></h2>
+        <p class="section-subtitle">Get your school running on Vidyalayaa in three simple steps.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step" id="step-1">
+          <div class="step__number">01</div>
+          <div class="step__content">
+            <h3 class="step__title">Register Your School</h3>
+            <p class="step__desc">Sign up your school, configure classes, sections, and academic sessions. Add teachers
+              and staff with role-based access in minutes.</p>
+          </div>
+          <div class="step__visual">
+            <div class="step__icon-circle">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" id="step-2">
+          <div class="step__number">02</div>
+          <div class="step__content">
+            <h3 class="step__title">Install NFC Devices</h3>
+            <p class="step__desc">Mount our plug-and-play NFC devices at gates and classroom blocks. Issue NFC cards to
+              students — each card links securely to a student profile.</p>
+          </div>
+          <div class="step__visual">
+            <div class="step__icon-circle">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="6" width="20" height="12" rx="2" />
+                <path d="M6 10h.01" />
+                <path d="M10 10h.01" />
+                <path d="M14 10h.01" />
+                <path d="M6 14h12" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" id="step-3">
+          <div class="step__number">03</div>
+          <div class="step__content">
+            <h3 class="step__title">Go Live & Monitor</h3>
+            <p class="step__desc">Students tap, parents get notified, teachers track academics, admins see everything.
+              Real-time dashboards keep your school connected.</p>
+          </div>
+          <div class="step__visual">
+            <div class="step__icon-circle">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS SECTION ============ -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat" id="stat-schools">
+          <div class="stat__number" data-target="500" data-suffix="+">0</div>
+          <div class="stat__label">Partner Schools</div>
+        </div>
+        <div class="stat" id="stat-students">
+          <div class="stat__number" data-target="250000" data-suffix="+">0</div>
+          <div class="stat__label">Students Tracked</div>
+        </div>
+        <div class="stat" id="stat-taps">
+          <div class="stat__number" data-target="10" data-suffix="M+">0</div>
+          <div class="stat__label">Million NFC Taps</div>
+        </div>
+        <div class="stat" id="stat-uptime">
+          <div class="stat__number" data-target="99.9" data-suffix="%">0</div>
+          <div class="stat__label">% Uptime SLA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHOWCASE SECTION ============ -->
+  <section class="showcase" id="showcase">
+    <div class="container">
+      <div class="showcase__inner">
+        <div class="showcase__content">
+          <span class="section-tag">Parent Portal</span>
+          <h2 class="showcase__title">Peace of mind,<br /><span class="text-accent">right in your pocket</span></h2>
+          <p class="showcase__desc">Parents receive instant notifications when their child arrives at or departs from
+            school. View full attendance history, exam results, homework updates, and fee status — all from the
+            mobile-optimized parent portal.</p>
+          <ul class="showcase__list">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg>
+              Instant arrival & departure alerts
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg>
+              View marks, homework, and reports
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg>
+              Fee payment tracking
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg>
+              Multi-child & multi-school support
+            </li>
+          </ul>
+        </div>
+        <div class="showcase__visual">
+          <img src="/images/mobile-app.jpg" alt="Parent Mobile App" class="showcase__img" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Interactive NFC Tap Experience Widget -->
+      <div class="nfc-simulator" id="nfc-simulator">
+        <div class="nfc-simulator__header">
+          <span class="nfc-simulator__badge">⚡ Interactive Live Demo</span>
+          <h3 class="nfc-simulator__title">Experience NFC Attendance in Real Time</h3>
+          <p class="nfc-simulator__subtitle">Click or tap the student NFC badge below to simulate a school gate tap and
+            watch real-time notification delivery.</p>
+        </div>
+        <div class="nfc-simulator__stage">
+          <!-- Student Card -->
+          <div class="nfc-card" id="nfc-student-card" role="button" tabindex="0" title="Click to tap NFC card">
+            <div class="nfc-card__header">
+              <span class="nfc-card__logo-text">VIDYALAYAA ID</span>
+              <span class="nfc-card__chip">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 12C2 6.5 6.5 2 12 2a10 10 0 0 1 10 10c0 5.5-4.5 10-10 10a10 10 0 0 1-10-10z" />
+                  <path d="M8 12a4 4 0 0 1 4-4" />
+                  <path d="M12 8a4 4 0 0 1 4 4" />
+                  <circle cx="12" cy="12" r="1" />
+                </svg>
+              </span>
+            </div>
+            <div class="nfc-card__body">
+              <div class="nfc-card__avatar">👦</div>
+              <div class="nfc-card__info">
+                <div class="nfc-card__student-name">Aarav Sharma</div>
+                <div class="nfc-card__student-details">Class 9-B • Roll #18</div>
+                <div class="nfc-card__tag-id">RFID: 04:A2:89:FE:19</div>
+              </div>
+            </div>
+            <div class="nfc-card__action">
+              <span class="nfc-card__tap-btn">👉 Click Here to Tap Card</span>
+            </div>
+          </div>
+
+          <!-- Reader Device -->
+          <div class="nfc-reader" id="nfc-reader-device">
+            <div class="nfc-reader__antenna" id="nfc-antenna">
+              <div class="nfc-reader__pulse-ring"></div>
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12C2 6.5 6.5 2 12 2a10 10 0 0 1 10 10c0 5.5-4.5 10-10 10a10 10 0 0 1-10-10z" />
+                <path d="M8 12a4 4 0 0 1 4-4" />
+                <path d="M12 8a4 4 0 0 1 4 4" />
+              </svg>
+            </div>
+            <div class="nfc-reader__status" id="nfc-status-text">Ready for Tap</div>
+            <div class="nfc-reader__gate">Gate 01 • Main Entrance Gate</div>
+          </div>
+
+          <!-- Simulated Phone Notification Feed -->
+          <div class="nfc-phone" id="nfc-phone-feed">
+            <div class="nfc-phone__top-bar">
+              <span class="nfc-phone__time" id="nfc-phone-time">08:02 AM</span>
+              <span class="nfc-phone__network">5G 📶 100% 🔋</span>
+            </div>
+            <div class="nfc-phone__screen">
+              <div class="nfc-phone__placeholder-title">Parent Live Mobile Alerts</div>
+              <div class="nfc-notifications-list" id="nfc-notifications-list">
+                <div class="nfc-notification-item nfc-notification-item--initial">
+                  <div class="nfc-notification__icon">🔔</div>
+                  <div class="nfc-notification__text">
+                    <strong>Yesterday</strong>: Aarav departed at 03:15 PM safely.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING SECTION ============ -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pricing</span>
+        <h2 class="section-title">Plans that grow<br /><span class="text-accent">with your school</span></h2>
+        <p class="section-subtitle">Choose the plan that fits your institution. All plans include core school management
+          and NFC attendance.</p>
+      </div>
+
+      <div class="pricing__toggle" id="pricing-toggle">
+        <span class="pricing__toggle-label pricing__toggle-label--active" data-period="monthly">Monthly</span>
+        <button class="pricing__toggle-switch" id="pricing-switch" aria-label="Toggle pricing period">
+          <span class="pricing__toggle-knob"></span>
+        </button>
+        <span class="pricing__toggle-label" data-period="yearly">Yearly <span class="pricing__save-badge">Save
+            20%</span></span>
+      </div>
+
+      <div class="pricing__grid">
+        <!-- Starter Plan -->
+        <div class="pricing-card" id="plan-starter">
+          <div class="pricing-card__header">
+            <h3 class="pricing-card__name">Starter</h3>
+            <p class="pricing-card__tagline">For small schools getting started</p>
+          </div>
+          <div class="pricing-card__price">
+            <span class="pricing-card__currency">₹</span>
+            <span class="pricing-card__amount" data-monthly="4999" data-yearly="3999">4,999</span>
+            <span class="pricing-card__period">/month</span>
+          </div>
+          <ul class="pricing-card__features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Up to 500 students</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> 2 NFC devices</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> NFC attendance</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Parent notifications</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Academic records</li>
+            <li class="pricing-card__feature--disabled"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="#ccc" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg> Advanced analytics</li>
+            <li class="pricing-card__feature--disabled"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="#ccc" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg> Multi-campus support</li>
+          </ul>
+          <a href="#cta" class="btn btn--outline btn--full" id="plan-starter-cta">Get Started</a>
+        </div>
+
+        <!-- Professional Plan -->
+        <div class="pricing-card pricing-card--featured" id="plan-pro">
+          <div class="pricing-card__badge">Most Popular</div>
+          <div class="pricing-card__header">
+            <h3 class="pricing-card__name">Professional</h3>
+            <p class="pricing-card__tagline">For growing schools</p>
+          </div>
+          <div class="pricing-card__price">
+            <span class="pricing-card__currency">₹</span>
+            <span class="pricing-card__amount" data-monthly="9999" data-yearly="7999">9,999</span>
+            <span class="pricing-card__period">/month</span>
+          </div>
+          <ul class="pricing-card__features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Up to 2,000 students</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> 5 NFC devices</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Everything in Starter</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Advanced analytics</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Fee management</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Priority support</li>
+            <li class="pricing-card__feature--disabled"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="#ccc" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg> Multi-campus support</li>
+          </ul>
+          <a href="#cta" class="btn btn--primary btn--full" id="plan-pro-cta">Get Started</a>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="pricing-card" id="plan-enterprise">
+          <div class="pricing-card__header">
+            <h3 class="pricing-card__name">Enterprise</h3>
+            <p class="pricing-card__tagline">For large institutions & groups</p>
+          </div>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount" style="font-size: 2rem;">Custom</span>
+          </div>
+          <ul class="pricing-card__features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Unlimited students</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Unlimited NFC devices</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Everything in Professional</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Multi-campus management</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Custom integrations</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> Dedicated account manager</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#32CD32" stroke-width="2">
+                <path d="M20 6L9 17L4 12" />
+              </svg> 99.9% SLA guarantee</li>
+          </ul>
+          <a href="#cta" class="btn btn--outline btn--full" id="plan-enterprise-cta">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">Loved by schools<br /><span class="text-accent">across India</span></h2>
+      </div>
+
+      <div class="testimonials__grid">
+        <div class="testimonial-card" id="testimonial-1">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">"Vidyalayaa transformed how we track attendance. Parents love the instant
+            notifications, and our administrative workload dropped by 60%. The NFC system just works."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">RS</div>
+            <div>
+              <div class="testimonial-card__name">Rajesh Sharma</div>
+              <div class="testimonial-card__role">Principal, DPS Greater Noida</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" id="testimonial-2">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">"As a parent, knowing exactly when my children arrive at school gives me
+            complete peace of mind. The app is simple and the attendance history is very useful."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">PM</div>
+            <div>
+              <div class="testimonial-card__name">Priya Mehta</div>
+              <div class="testimonial-card__role">Parent, Ryan International Mumbai</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" id="testimonial-3">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">"The teacher dashboard is incredibly intuitive. Entering marks, uploading
+            homework, and tracking class attendance — everything is in one place. Brilliant product."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">AK</div>
+            <div>
+              <div class="testimonial-card__name">Anita Kumar</div>
+              <div class="testimonial-card__role">Senior Teacher, St. Xavier's Delhi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ SECTION ============ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Frequently asked<br /><span class="text-accent">questions</span></h2>
+      </div>
+
+      <div class="faq__list">
+        <div class="faq__item" id="faq-1">
+          <button class="faq__question" aria-expanded="false">
+            <span>What is NFC attendance and how does it work?</span>
+            <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq__answer">
+            <p>NFC (Near Field Communication) attendance uses small, durable NFC cards issued to each student. When a
+              student taps their card on our device at the school gate, their arrival time is instantly recorded and
+              parents are notified in real-time. The device works offline too — it stores taps locally and syncs when
+              internet is available.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" id="faq-2">
+          <button class="faq__question" aria-expanded="false">
+            <span>Is Vidyalayaa secure? How is student data protected?</span>
+            <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq__answer">
+            <p>Absolutely. Vidyalayaa uses enterprise-grade security: all data is encrypted in transit (TLS) and at
+              rest, multi-tenant isolation ensures one school can never access another's data, and role-based access
+              control limits who can see what. We also support MFA for admin accounts and maintain comprehensive audit
+              logs.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" id="faq-3">
+          <button class="faq__question" aria-expanded="false">
+            <span>What happens if the NFC device loses internet?</span>
+            <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq__answer">
+            <p>Our NFC devices have a durable local queue. If internet goes down, the device continues recording taps
+              locally with timestamps. Once connectivity is restored, all queued events are automatically uploaded in
+              idempotent batches — no tap is ever lost.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" id="faq-4">
+          <button class="faq__question" aria-expanded="false">
+            <span>Can parents with multiple children in different schools use Vidyalayaa?</span>
+            <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq__answer">
+            <p>Yes! Parents can have children across multiple schools on Vidyalayaa. Each child-school combination
+              creates a separate membership, and parents can switch between them seamlessly in the portal. Notifications
+              come for all linked children.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" id="faq-5">
+          <button class="faq__question" aria-expanded="false">
+            <span>How long does setup take for a new school?</span>
+            <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq__answer">
+            <p>Most schools are up and running within a week. School registration and configuration takes about a day,
+              NFC device installation takes 1-2 days, and student card issuance runs in parallel. Our team provides
+              hands-on onboarding support throughout.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" id="faq-6">
+          <button class="faq__question" aria-expanded="false">
+            <span>What roles and permissions does the platform support?</span>
+            <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq__answer">
+            <p>Vidyalayaa supports five primary roles: School Admin (full school management), Principal (school-wide
+              view), Teacher (scoped to assigned classes/subjects), Parent (view linked children), and Student (view own
+              records). Each role has granular permission controls enforced both in the UI and on the server.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA SECTION ============ -->
+  <section class="cta" id="cta">
+    <div class="container">
+      <div class="cta__inner">
+        <div class="cta__content">
+          <h2 class="cta__title">Ready to modernize<br />your school?</h2>
+          <p class="cta__desc">Join 500+ schools already using Vidyalayaa. Book a free demo and see the platform in
+            action.</p>
+        </div>
+        <form class="cta__form" id="demo-form">
+          <div class="cta__form-row">
+            <input type="text" placeholder="School Name" class="cta__input" id="demo-school" required />
+            <input type="text" placeholder="Your Name" class="cta__input" id="demo-name" required />
+          </div>
+          <div class="cta__form-row">
+            <input type="email" placeholder="Email Address" class="cta__input" id="demo-email" required />
+            <input type="tel" placeholder="Phone Number" class="cta__input" id="demo-phone" required />
+          </div>
+          <div class="cta__form-row">
+            <select class="cta__input" id="demo-size">
+              <option value="" disabled selected>School Size</option>
+              <option value="small">Under 500 students</option>
+              <option value="medium">500 - 2,000 students</option>
+              <option value="large">2,000+ students</option>
+            </select>
+            <button type="submit" class="btn btn--primary btn--lg btn--full" id="demo-submit">
+              Book Free Demo
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo-link">
+            <img src="/images/logo.jpg" alt="Vidyalayaa" class="footer__logo" />
+            <span class="footer__name">Vidyalayaa</span>
+          </a>
+          <p class="footer__desc">Smart school management with NFC-powered attendance, real-time notifications, and
+            comprehensive academic tracking — built for Indian schools.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Twitter" id="social-twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn" id="social-linkedin">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram" id="social-instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube" id="social-youtube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__links-group">
+          <h4 class="footer__links-title">Product</h4>
+          <ul class="footer__links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__links-group">
+          <h4 class="footer__links-title">Company</h4>
+          <ul class="footer__links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Press Kit</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__links-group">
+          <h4 class="footer__links-title">Support</h4>
+          <ul class="footer__links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Status Page</a></li>
+            <li><a href="#">vidyalayaainfo@gmail.com</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__links-group">
+          <h4 class="footer__links-title">Legal</h4>
+          <ul class="footer__links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Data Processing</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 Vidyalayaa. All rights reserved. Made with ❤️ in India.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ SIGN IN / UNIFIED PORTAL MODAL ============ -->
+  <div class="modal-overlay" id="login-modal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+
+      <div class="modal-header">
+        <div class="modal-badge">Vidyalayaa Unified Portal</div>
+        <h3 class="modal-title" id="modal-title">Sign in to your Portal</h3>
+        <p class="modal-subtitle">Select your role to access attendance records, academics, and administrative
+          dashboards.</p>
+      </div>
+
+      <div class="modal-roles" id="modal-roles">
+        <button type="button" class="modal-role-btn active" data-role="parent">
+          <span class="role-icon">👨‍👩‍👦</span>
+          <span class="role-name">Parent</span>
+        </button>
+        <button type="button" class="modal-role-btn" data-role="teacher">
+          <span class="role-icon">👩‍🏫</span>
+          <span class="role-name">Teacher</span>
+        </button>
+        <button type="button" class="modal-role-btn" data-role="principal">
+          <span class="role-icon">🎓</span>
+          <span class="role-name">Principal</span>
+        </button>
+        <button type="button" class="modal-role-btn" data-role="admin">
+          <span class="role-icon">⚙️</span>
+          <span class="role-name">Admin</span>
+        </button>
+        <button type="button" class="modal-role-btn" data-role="student">
+          <span class="role-icon">🎒</span>
+          <span class="role-name">Student</span>
+        </button>
+      </div>
+
+      <form class="modal-form" id="login-form">
+        <div class="form-group">
+          <label for="login-email" class="form-label" id="login-label-user">Phone Number or Parent ID</label>
+          <input type="text" id="login-email" class="cta__input modal-input" value="+91 98765 43210" required />
+        </div>
+        <div class="form-group">
+          <label for="login-password" class="form-label">Password / OTP</label>
+          <input type="password" id="login-password" class="cta__input modal-input" value="••••••••" required />
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn--primary btn--full btn--lg" id="login-submit-btn">
+            Sign In to Portal
+          </button>
+        </div>
+      </form>
+
+      <div class="modal-footer-note">
+        <span>Need school onboarding or demo access? <a href="#cta" id="modal-to-demo">Book Free Demo</a></span>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
