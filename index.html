@@ -32,8 +32,8 @@
       <ul class="canvas-nav__links">
         <li><a href="#features">Features</a></li>
         <li><a href="#how-it-works">NFC Attendance</a></li>
-        <li><a href="/portal.html">Portals</a></li>
         <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
 
       <div class="canvas-nav__actions">
@@ -148,7 +148,7 @@
         </p>
 
         <!-- Blue CTA Button: Login -->
-        <a href="/portal.html" class="hero-center__btn" id="nav-login">
+        <a href="#login-modal" class="hero-center__btn" id="nav-login">
           Login
         </a>
       </div>
@@ -993,53 +993,29 @@
     </div>
   </footer>
 
-  <!-- ============ SIGN IN / UNIFIED PORTAL MODAL ============ -->
+  <!-- ============ SIGN IN MODAL ============ -->
   <div class="modal-overlay" id="login-modal" aria-hidden="true">
     <div class="modal-dialog" role="dialog" aria-labelledby="modal-title">
       <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
 
       <div class="modal-header">
-        <div class="modal-badge">Vidyalayaa Unified Portal</div>
-        <h3 class="modal-title" id="modal-title">Sign in to your Portal</h3>
-        <p class="modal-subtitle">Select your role to access attendance records, academics, and administrative
-          dashboards.</p>
-      </div>
-
-      <div class="modal-roles" id="modal-roles">
-        <button type="button" class="modal-role-btn active" data-role="parent">
-          <span class="role-icon">👨‍👩‍👦</span>
-          <span class="role-name">Parent</span>
-        </button>
-        <button type="button" class="modal-role-btn" data-role="teacher">
-          <span class="role-icon">👩‍🏫</span>
-          <span class="role-name">Teacher</span>
-        </button>
-        <button type="button" class="modal-role-btn" data-role="principal">
-          <span class="role-icon">🎓</span>
-          <span class="role-name">Principal</span>
-        </button>
-        <button type="button" class="modal-role-btn" data-role="admin">
-          <span class="role-icon">⚙️</span>
-          <span class="role-name">Admin</span>
-        </button>
-        <button type="button" class="modal-role-btn" data-role="student">
-          <span class="role-icon">🎒</span>
-          <span class="role-name">Student</span>
-        </button>
+        <div class="modal-badge">Vidyalayaa Access</div>
+        <h3 class="modal-title" id="modal-title">Sign in to your account</h3>
+        <p class="modal-subtitle">Access attendance records, academics, and administrative dashboards.</p>
       </div>
 
       <form class="modal-form" id="login-form">
         <div class="form-group">
-          <label for="login-email" class="form-label" id="login-label-user">Phone Number or Parent ID</label>
-          <input type="text" id="login-email" class="cta__input modal-input" value="+91 98765 43210" required />
+          <label for="login-email" class="form-label" id="login-label-user">Email or Mobile Number</label>
+          <input type="text" id="login-email" class="cta__input modal-input" placeholder="e.g. name@school.edu or +91 98765 43210" required autocomplete="username" />
         </div>
         <div class="form-group">
-          <label for="login-password" class="form-label">Password / OTP</label>
-          <input type="password" id="login-password" class="cta__input modal-input" value="••••••••" required />
+          <label for="login-password" class="form-label">Password</label>
+          <input type="password" id="login-password" class="cta__input modal-input" placeholder="Enter your password" required autocomplete="current-password" />
         </div>
         <div class="modal-actions">
           <button type="submit" class="btn btn--primary btn--full btn--lg" id="login-submit-btn">
-            Sign In to Portal
+            Sign In
           </button>
         </div>
       </form>

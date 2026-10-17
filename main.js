@@ -302,20 +302,11 @@ if (nfcCard) {
 const loginModal = document.getElementById('login-modal');
 const modalClose = document.getElementById('modal-close');
 const navLoginButtons = document.querySelectorAll('#nav-login, .navbar__mobile-actions a:first-child');
-const modalRoles = document.querySelectorAll('.modal-role-btn');
 const loginEmailInput = document.getElementById('login-email');
 const loginLabelUser = document.getElementById('login-label-user');
 const loginForm = document.getElementById('login-form');
 const loginSubmitBtn = document.getElementById('login-submit-btn');
 const modalToDemo = document.getElementById('modal-to-demo');
-
-const roleDefaults = {
-  parent: { label: 'Phone Number or Parent ID', value: '+91 98765 43210' },
-  teacher: { label: 'Teacher Email or ID', value: 'teacher.mehta@vidyalayaa.edu' },
-  principal: { label: 'Principal ID or Email', value: 'principal@vidyalayaa.edu' },
-  admin: { label: 'School Admin ID', value: 'admin@vidyalayaa.edu' },
-  student: { label: 'Student Roll No / ID', value: 'aarav.sharma@vidyalayaa.edu' }
-};
 
 function openLoginModal(e) {
   if (e) e.preventDefault();
@@ -358,19 +349,6 @@ if (modalToDemo) {
   });
 }
 
-// Switch roles in modal
-modalRoles.forEach(btn => {
-  btn.addEventListener('click', () => {
-    modalRoles.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const role = btn.dataset.role;
-    if (roleDefaults[role]) {
-      loginLabelUser.textContent = roleDefaults[role].label;
-      loginEmailInput.value = roleDefaults[role].value;
-    }
-  });
-});
-
 if (loginForm) {
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -388,7 +366,7 @@ if (loginForm) {
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M20 6L9 17L4 12"/>
         </svg>
-        Logged In! Launching Portal...
+        Signed In Successfully!
       `;
       loginSubmitBtn.style.background = 'var(--color-primary)';
 
@@ -397,12 +375,8 @@ if (loginForm) {
         loginSubmitBtn.disabled = false;
         loginSubmitBtn.style.background = '';
         closeLoginModal();
-
-        // Redirect to Portal with selected role
-        const activeRoleBtn = document.querySelector('.modal-role-btn.active');
-        const role = activeRoleBtn ? activeRoleBtn.dataset.role : 'parent';
-        window.location.href = `/portal.html?role=${role}`;
-      }, 1000);
+        loginForm.reset();
+      }, 1500);
     }, 1200);
   });
 }
